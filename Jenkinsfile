@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                checkout scm
 
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
